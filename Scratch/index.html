@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta CHARSET="UTF-8">
+    
+    <title>刮刮乐</title>
+    <link rel="stylesheet" type="text/css" href="style/base.css">
+    <style type="text/css">
+    body{
+    	text-align: left;
+    }
+    #wScratchPad3{
+    	position:absolute; 
+    	border:solid black 1px;
+    	width: 500px;
+    	height: 300px;
+    }
+    .wsc-body{
+    	position: relative;
+    	font-size: 40px;
+    	text-align: center;
+    	line-height: 300px;
+    }
+    .wsc-body img,.wsc-body canvas{
+    	top: 0;
+    	left: 0;
+    }
+    </style>
+</head>
+<body>
+	<div class="wsc-body">
+	    <div id="wScratchPad3">恭喜中奖了</div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/wScratchPad.js"></script>
+    <script type="text/javascript">
+        $("#wScratchPad3").wScratchPad({
+			size: 20,
+			bg:"images/posi1h.png",
+			fg:"#ddd",
+            cursor:'images/posi3.png',
+            scratchMove: function(e, percent)
+            {
+                if(percent > 70)
+                this.clear();
+            },
+        });
+
+
+// $('#elem').wScratchPad({
+//   size        : 5,          // The size of the brush/scratch.
+//   bg          : '#cacaca',  // Background (image path or hex color).
+//   fg          : '#6699ff',  // Foreground (image path or hex color).
+//   realtime    : true,       // Calculates percentage in realitime.
+//   scratchDown : null,       // Set scratchDown callback.
+//   scratchUp   : null,       // Set scratchUp callback.
+//   scratchMove : null,       // Set scratcMove callback.
+//   cursor      : 'crosshair' // Set cursor.
+// });
+    </script>
+</body>
+</html>
